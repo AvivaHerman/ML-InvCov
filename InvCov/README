@@ -1,0 +1,24 @@
+This the README file for the Matlab release of the ML_QUIC program. 
+
+You may compile QUIC using the mex compiler.  For example:
+
+> mex QUIC.cpp QUIC_utils.cpp libmwlapack.lib libmwblas.lib
+
+You may compile ML_QUIC using the mex compiler.  For example:
+
+> mex ML_QUIC.cpp QUIC_utils.cpp libmwlapack.lib libmwblas.lib
+
+To compile the Matlab executable:
+
+> make
+
+which produces a 64-bit MEX file.
+
+The arguments and return values when invoked from within Matlab are
+documented in QUIC.m and ML_QUIC.m. You may type 'help QUIC' or 'help ML_QUIC' to obtain the full
+documentation.
+
+Sample use:
+> [X W opt cputime iter] = ML_QUIC('default', S, 0.5, 1e-6, 2, 100);
+where S is the emirical covariance matrix, the regularization parameter is
+0.5, and tolerance is 1e-6.
